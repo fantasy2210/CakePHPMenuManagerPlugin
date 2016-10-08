@@ -15,7 +15,7 @@ Create plugin database: this action will create 2 table menus and menu_items to 
 ##Using:
 1. What are your menu look like ? You must identify it. For examle, I need a menu like:<br/>
 <p>
-[![Alt text]( https://lh4.googleusercontent.com/5PyOv6kw3sVJ2fhfRdtAg2yXd_W3sigVfoIw32td13qJB8VVfV2xquJqC4XqZeT3CO9KyWYDotISe0s=w1366-h657 )](https://getbootstrap.com/examples/navbar/ )
+[![Menu demo image, click here to see the menu, if the image not show]( https://lh4.googleusercontent.com/5PyOv6kw3sVJ2fhfRdtAg2yXd_W3sigVfoIw32td13qJB8VVfV2xquJqC4XqZeT3CO9KyWYDotISe0s=w1366-h657 )](https://getbootstrap.com/examples/navbar/ )
 
 ###The code of above menu:
     ```<div class="container-fluid">
