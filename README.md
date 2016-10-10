@@ -75,9 +75,7 @@ Open http://yourcakephpappurl/menu_manager/menu_items/add and add some menu item
 
 4. Insert to view or element
 You need menu_id to render it. For example, top_menu has menu_id is 2 and here is my top_menu element code:
-
-
-    <div class="container-fluid">
+<code><div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -96,7 +94,7 @@ You need menu_id to render it. For example, top_menu has menu_id is 2 and here i
         </div><!--/.nav-collapse -->
     </div>
 
-
+</code>
 #Remember:
 
 This plugin prepare data for [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder ) generate. Therefore, you should know how to generate menu in [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder )
