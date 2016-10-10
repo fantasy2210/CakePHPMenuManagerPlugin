@@ -36,7 +36,7 @@ Create plugin database: this action will create 2 table menus and menu_items to 
 [![Menu demo image, click here to see the menu, if the image not show]( https://lh4.googleusercontent.com/NjN4eGxYSZtsnF2LE0yrPAWYrjLCBlxHxT_uvP4k_VOZLsk-jMjW2VgIzGlRzk_oOOdRI5mawC1JV_M=w1366-h657 )](https://getbootstrap.com/examples/navbar/ )
 
 ###The code of above menu:
-    ```html
+```html
         <div class="container-fluid">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -66,7 +66,8 @@ Create plugin database: this action will create 2 table menus and menu_items to 
                   </li>
                 </ul>            
               </div><!--/.nav-collapse -->
-            </div>```
+            </div>
+```
 </p>
 2. create Menu and menu Items:
 
