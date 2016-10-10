@@ -89,12 +89,12 @@ You need menu_id to render it. For example, top_menu has menu_id is 2 and here i
                         <a class="navbar-brand" href="#">Project name</a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
-```php
+
                         <?php
                         $top_menu = $this->requestAction(array('plugin' => 'menu_manager', 'controller' => 'menu_items', 'action' => 'renderMenu'), array('menu_id' => 1));
                         echo $this->MenuBuilder->build($top_menu[0], array('class' => 'nav navbar-nav', 'wrapperClass' => 'dropdown-menu'), $top_menu[1]);
                         ?>
-```
+
                     </div><!--/.nav-collapse -->
             </div>
 ```
