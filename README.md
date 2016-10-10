@@ -11,21 +11,19 @@ Open bootstrap.php and add this line:
 
 Open AppController.php add component and renderMenu function:
 
-<code>
-public $components = array('MenuManager.MenuGatherer','Flash');
-public function renderMenu() {
-        $menu = array();
-        $menu_id = "";
-        /* Check if requestAction */
-        if ($this->params->params['bare']) {
-            if ($this->params->params['named']['menu_id']) {
-                $menu_id = $this->params->params['named']['menu_id'];
-                $menu = $this->MenuGatherer->render($menu_id);
+        public $components = array('MenuManager.MenuGatherer','Flash');
+        public function renderMenu() {
+                $menu = array();
+                $menu_id = "";
+                /* Check if requestAction */
+                if ($this->params->params['bare']) {
+                    if ($this->params->params['named']['menu_id']) {
+                        $menu_id = $this->params->params['named']['menu_id'];
+                        $menu = $this->MenuGatherer->render($menu_id);
+                    }
+                }
+                return $menu;
             }
-        }
-        return $menu;
-    }
-</code>
 
 Create plugin database: this action will create 2 table menus and menu_items to current database.
 `cake schema create -p MenuManager`
@@ -67,7 +65,7 @@ Add fun
                   </li>
                 </ul>            
               </div><!--/.nav-collapse -->
-            </div>```
+            </div>`
 </p>
 2. create Menu and menu Items:
 
@@ -79,7 +77,7 @@ Open http://yourcakephpappurl/menu_manager/menu_items/add and add some menu item
 You need menu_id to render it. For example, top_menu has menu_id is 2 and here is my top_menu element code:
 
 
-    ```<div class="container-fluid">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
@@ -96,7 +94,7 @@ You need menu_id to render it. For example, top_menu has menu_id is 2 and here i
             echo $this->MenuBuilder->build($top_menu[0], array('class' => 'nav navbar-nav', 'wrapperClass' => 'dropdown-menu'), $top_menu[1]);
             ?>
         </div><!--/.nav-collapse -->
-    </div>```
+    </div>
 
 
 #Remember:
@@ -107,7 +105,7 @@ I have custom [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder
 
 I add iconTag (icon of menu item),iconShowChildrenTag(icon of show down menu children),aTagOtherAttibutes( other a tag css attribute)
 
-Special thanks to author of [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder ), [MenuBuilder Helper]( CakePHP)
+Special thanks to author of [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder ), [CakePHP]( http://cakephp.org)
 
 
 The MIT License (MIT)
