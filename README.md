@@ -36,7 +36,8 @@ Create plugin database: this action will create 2 table menus and menu_items to 
 [![Menu demo image, click here to see the menu, if the image not show]( https://lh4.googleusercontent.com/NjN4eGxYSZtsnF2LE0yrPAWYrjLCBlxHxT_uvP4k_VOZLsk-jMjW2VgIzGlRzk_oOOdRI5mawC1JV_M=w1366-h657 )](https://getbootstrap.com/examples/navbar/ )
 
 ###The code of above menu:
-    <div class="container-fluid">
+    ```html
+        <div class="container-fluid">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span class="sr-only">Toggle navigation</span>
@@ -65,7 +66,7 @@ Create plugin database: this action will create 2 table menus and menu_items to 
                   </li>
                 </ul>            
               </div><!--/.nav-collapse -->
-            </div>`
+            </div>```
 </p>
 2. create Menu and menu Items:
 
@@ -75,8 +76,9 @@ Open http://yourcakephpappurl/menu_manager/menu_items/add and add some menu item
 
 4. Insert to view or element
 You need menu_id to render it. For example, top_menu has menu_id is 2 and here is my top_menu element code:
-            <div class="container-fluid">
-                    <div class="navbar-header">
+<div class="container-fluid">
+                    ```html
+    <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
@@ -91,8 +93,8 @@ You need menu_id to render it. For example, top_menu has menu_id is 2 and here i
                         echo $this->MenuBuilder->build($top_menu[0], array('class' => 'nav navbar-nav', 'wrapperClass' => 'dropdown-menu'), $top_menu[1]);
                         ?>
                     </div><!--/.nav-collapse -->
-            </div>`
-
+            </div>
+```
 #Remember:
 
 This plugin prepare data for [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder ) generate. Therefore, you should know how to generate menu in [MenuBuilder Helper]( https://github.com/torifat/cake-menu_builder )
