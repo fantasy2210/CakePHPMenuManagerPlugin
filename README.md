@@ -9,16 +9,36 @@ Open bootstrap.php and add this line:
 
 `CakePlugin::load('MenuManager');`
 
+Open AppController.php add component and renderMenu function:
+
+<code>
+public $components = array('MenuManager.MenuGatherer','Flash');
+public function renderMenu() {
+        $menu = array();
+        $menu_id = "";
+        /* Check if requestAction */
+        if ($this->params->params['bare']) {
+            if ($this->params->params['named']['menu_id']) {
+                $menu_id = $this->params->params['named']['menu_id'];
+                $menu = $this->MenuGatherer->render($menu_id);
+            }
+        }
+        return $menu;
+    }
+</code>
+
 Create plugin database: this action will create 2 table menus and menu_items to current database.
 `cake schema create -p MenuManager`
+
+Add fun
 
 ##Using:
 1. What are your menu look like ? You must identify it. For examle, I need a menu like:<br/>
 <p>
-[![Menu demo image, click here to see the menu, if the image not show]( https://lh4.googleusercontent.com/5PyOv6kw3sVJ2fhfRdtAg2yXd_W3sigVfoIw32td13qJB8VVfV2xquJqC4XqZeT3CO9KyWYDotISe0s=w1366-h657 )](https://getbootstrap.com/examples/navbar/ )
+[![Menu demo image, click here to see the menu, if the image not show]( https://lh4.googleusercontent.com/NjN4eGxYSZtsnF2LE0yrPAWYrjLCBlxHxT_uvP4k_VOZLsk-jMjW2VgIzGlRzk_oOOdRI5mawC1JV_M=w1366-h657 )](https://getbootstrap.com/examples/navbar/ )
 
 ###The code of above menu:
-    ```<div class="container-fluid">
+    <div class="container-fluid">
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                   <span class="sr-only">Toggle navigation</span>
@@ -50,7 +70,7 @@ Create plugin database: this action will create 2 table menus and menu_items to 
             </div>```
 </p>
 2. create Menu and menu Items:
-This plugin 
+
 Open http://yourcakephpappurl/menu_manager/menus/add and add menu: name: Top menu; alias: top-menu
 
 Open http://yourcakephpappurl/menu_manager/menu_items/add and add some menu items.
