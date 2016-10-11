@@ -1,11 +1,11 @@
 <div class="x_panel">
     <div class="x_title">
-        <h2><?php echo __('Edit Element'); ?></h2>        
+        <h2><?php echo __('Edit Menu'); ?></h2>        
         <div class="clearfix"></div>
     </div>
     <div class="x_content">
         <br>
-        <?php echo $this->Form->create('Element', array(
+        <?php echo $this->Form->create('Menu', array(
             'data-parsley-validate'=>'',
             'class' => 'form-horizontal form-label-left',
             'novalidate'=>'',
@@ -13,7 +13,6 @@
             'after' => '</div>'))); ?>
         						<?php echo $this->Form->input('name', array('class' => 'form-control col-md-7 col-xs-12','label'=>array('class'=>'control-label col-md-3 col-sm-3 col-xs-12'))); ?>
 						<?php echo $this->Form->input('alias', array('class' => 'form-control col-md-7 col-xs-12','label'=>array('class'=>'control-label col-md-3 col-sm-3 col-xs-12'))); ?>
-						<?php echo $this->Form->input('menu_id', array('class' => 'form-control col-md-7 col-xs-12','label'=>array('class'=>'control-label col-md-3 col-sm-3 col-xs-12'))); ?>
 						<?php echo $this->Form->input('id', array('class' => 'form-control col-md-7 col-xs-12','label'=>array('class'=>'control-label col-md-3 col-sm-3 col-xs-12'))); ?>
 
         <div class="ln_solid"></div>

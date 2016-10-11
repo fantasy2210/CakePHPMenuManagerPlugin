@@ -89,6 +89,7 @@ class MenuBuilderHelper extends AppHelper {
      * @param array $settings Configuration settings for the helper.
      */
     public function __construct(View $View, $settings = array()) {
+
         if (isset($settings['defaults'])) {
             $this->defaults = $settings['defaults'] + $this->defaults;
             unset($settings['defaults']);
@@ -197,6 +198,10 @@ class MenuBuilderHelper extends AppHelper {
      * @return string HTML menu item
      */
     protected function _buildItem(&$item, $pos = -1, &$isActive = false) {
+        //
+        $view = new View();
+        $html = $view->loadHelper('Html');
+        //
         $item = array_merge($this->defaults, $item);
 
         if ($item['separator']) {
@@ -308,20 +313,26 @@ class MenuBuilderHelper extends AppHelper {
             if (!empty($item['image'])) {
                 $urlOptions['escapeTitle'] = false;
                 $labelTitle = (isset($urlOptions['escape']) && $urlOptions['escape']) ? h($item['title']) : $item['title'];
-                $url = $this->Html->link($this->Html->image($item['image'], array('alt' => $item['title'])) . '<span class="label">' . $labelTitle . '</span>', $item['url'], $urlOptions);
+                //$url = $this->Html->link($this->Html->image($item['image'], array('alt' => $item['title'])) . '<span class="label">' . $labelTitle . '</span>', $item['url'], $urlOptions);
+                $html->link($html->image($item['image'], array('alt' => $item['title'])) . '<span class="label">' . $labelTitle . '</span>', $item['url'], $urlOptions);
             } else {
                 $urlOptions['escapeTitle'] = false;
                 if ($hasChildren) {
                     if (!empty($item['iconTag'])) {
-                        $url = $this->Html->link($item['iconTag'] . $item['title'] . $item['iconShowChildrenTag'], $item['url'], $urlOptions);
+                        //$url = $this->Html->link($item['iconTag'] . $item['title'] . $item['iconShowChildrenTag'], $item['url'], $urlOptions);
+                        $url = $html->link($item['iconTag'] . $item['title'] . $item['iconShowChildrenTag'], $item['url'], $urlOptions);
                     } else {
-                        $url = $this->Html->link($item['title'] . $item['iconShowChildrenTag'], $item['url'], $urlOptions);
+                        //$url = $this->Html->link($item['title'] . $item['iconShowChildrenTag'], $item['url'], $urlOptions);
+                        $url = $html->link($item['title'] . $item['iconShowChildrenTag'], $item['url'], $urlOptions);
                     }
                 } else {
                     if (!empty($item['iconTag'])) {
-                        $url = $this->Html->link($item['iconTag'] . $item['title'], $item['url'], $urlOptions);
+                        //$url = $this->Html->link($item['iconTag'] . $item['title'], $item['url'], $urlOptions);
+                        $url = $html->link($item['iconTag'] . $item['title'], $item['url'], $urlOptions);
                     } else {
-                        $url = $this->Html->link($item['title'], $item['url'], $urlOptions);
+
+                        //$url = $this->Html->link($item['title'], $item['url'], $urlOptions);
+                        $url = $html->link($item['title'], $item['url'], $urlOptions);
                     }
                 }
             }

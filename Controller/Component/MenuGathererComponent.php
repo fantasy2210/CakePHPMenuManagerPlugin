@@ -2,7 +2,6 @@
 
 App::uses('Component', 'Controller');
 
-
 class MenuGathererComponent extends Component {
 
     protected $_controller;
@@ -10,7 +9,6 @@ class MenuGathererComponent extends Component {
     protected $_model;
     //
     protected $_menu = array();
-    
 
     /**
      * Initialize component

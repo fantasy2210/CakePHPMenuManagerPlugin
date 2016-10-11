@@ -71,9 +71,9 @@ Create plugin database: this action will create 2 table menus and menu_items to 
 </p>
 2. create Menu and menu Items:
 
-Open http://yourcakephpappurl/menu_manager/menus/add and add menu: name: Top menu; alias: top-menu
+Open `http://yourcakephpappurl/admin/menu_manager/menus/add` and add menu: name: Top menu; alias: top-menu
 
-Open http://yourcakephpappurl/menu_manager/menu_items/add and add some menu items.
+Open `http://yourcakephpappurl/admin/menu_manager/menu_items/add` and add some menu items.
 
 4. Insert to view or element
 You need menu_id to render it. For example, top_menu has menu_id is 2 and here is my top_menu element code:
@@ -91,7 +91,7 @@ You need menu_id to render it. For example, top_menu has menu_id is 2 and here i
                     <div id="navbar" class="navbar-collapse collapse">
 
                         <?php
-                        $top_menu = $this->requestAction(array('plugin' => 'menu_manager', 'controller' => 'menu_items', 'action' => 'renderMenu'), array('menu_id' => 1));
+                        $top_menu = $this->requestAction(array('admin'=>false,'plugin' => 'menu_manager', 'controller' => 'menu_items', 'action' => 'renderMenu'), array('menu_id' => 1));
                         echo $this->MenuBuilder->build($top_menu[0], array('class' => 'nav navbar-nav', 'wrapperClass' => 'dropdown-menu'), $top_menu[1]);
                         ?>
 

@@ -16,13 +16,14 @@ class MenuItemsController extends MenuManagerAppController {
      * @var array
      */
     public $components = array('Paginator');
+    public $helpers = array('Html');
 
     /**
      * index method
      *
      * @return void
      */
-    public function index() {
+    public function admin_index() {
         $conditions = array();
         $contain = array();
         $order = array();
@@ -42,7 +43,7 @@ class MenuItemsController extends MenuManagerAppController {
      * @param string $id
      * @return void
      */
-    public function view($id = null) {
+    public function admin_view($id = null) {
         if (!$this->MenuItem->exists($id)) {
             throw new NotFoundException(__('Invalid menu item'));
         }
@@ -55,7 +56,7 @@ class MenuItemsController extends MenuManagerAppController {
      *
      * @return void
      */
-    public function add() {
+    public function admin_add() {
         if ($this->request->is('post')) {
             $this->MenuItem->create();
             if ($this->MenuItem->save($this->request->data)) {
@@ -82,7 +83,7 @@ class MenuItemsController extends MenuManagerAppController {
      * @param string $id
      * @return void
      */
-    public function edit($id = null) {
+    public function admin_edit($id = null) {
         $this->MenuItem->id = $id;
         if (!$this->MenuItem->exists($id)) {
             throw new NotFoundException(__('Invalid menu item'));
@@ -111,7 +112,7 @@ class MenuItemsController extends MenuManagerAppController {
      * @param string $id
      * @return void
      */
-    public function delete($id = null) {
+    public function admin_delete($id = null) {
         if ($this->request->is('ajax')) {
             $this->autoRender = false;
             if (!empty($this->request->data)) {
